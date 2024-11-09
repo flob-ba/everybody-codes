@@ -1,0 +1,6 @@
+BasedOnStyle: LLVM
+
+AllowShortFunctionsOnASingleLine: Empty
+ColumnLimit: 0
+IndentWidth: 4
+PointerAlignment: Left
