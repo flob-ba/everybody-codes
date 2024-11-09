@@ -1,5 +1,6 @@
 #include "utils.h"
 
+#include <ctype.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,6 +22,12 @@ char* read_puzzle_input(const char* filename) {
     for (uint64_t i = 0; i < contentLength; i++)
         content[i] = fgetc(file);
     content[contentLength] = '\0';
+
+    // Remove trailing whitespace
+    while (isspace(content[contentLength - 1])) {
+        content[contentLength - 1] = '\0';
+        contentLength--;
+    }
 
     return content;
 }
